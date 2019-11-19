@@ -8,6 +8,7 @@ trigger:
 
 jobs:
 - job: job1
+  dependsOn: job2
   pool:
     vmImage: 'ubuntu-latest'
   steps:
