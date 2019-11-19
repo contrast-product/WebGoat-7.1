@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -17,3 +18,13 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: ContrastIntegration@2
+  inputs:
+    ContrastService: 'Contrast Connection'
+    Application: '75a71c5b-4381-44fa-abd0-b0e57554560e'
+    CriticalLimit: '0'
+    HighLimit: '0'
+    MediumLimit: '0'
+    LowLimit: '0'
+    NoteLimit: '0'
