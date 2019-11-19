@@ -9,6 +9,7 @@ trigger:
 
 jobs:
 - job: job1
+  dependsOn: job2
   pool:
     vmImage: 'ubuntu-latest'
   steps:
@@ -20,7 +21,7 @@ jobs:
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
 
-- job: verify_application
+- job: job2
   pool: server
   steps:
     - task: ContrastIntegration@2
