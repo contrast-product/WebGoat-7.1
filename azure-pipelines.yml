@@ -19,7 +19,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: ContrastIntegration@2
+- task: ContrastIntegration
   inputs:
     ContrastService: 'Contrast Connection'
     Application: '75a71c5b-4381-44fa-abd0-b0e57554560e'
