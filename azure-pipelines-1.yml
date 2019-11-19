@@ -5,22 +5,9 @@
 
 trigger:
   - master
-
+  
 jobs:
 - job: job1
-  dependsOn: job2
-  pool:
-    vmImage: 'ubuntu-latest'
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
-
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
-
-- job: job2
   pool: server
   steps:
   - task: ContrastIntegration@2
@@ -32,3 +19,16 @@ jobs:
       MediumLimit: '0'
       LowLimit: '0'
       NoteLimit: '0'
+
+- job: job2
+  dependsOn: job1
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: echo Hello, world!
+    displayName: 'Run a one-line script'
+
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+    displayName: 'Run a multi-line script'
