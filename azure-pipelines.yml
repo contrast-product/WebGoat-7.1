@@ -7,25 +7,28 @@
 trigger:
 - master
 
-job:
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+jobs:
 - job: verify_application
   pool: server
-  vmImage: 'ubuntu-latest'
   steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
-
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
-
-  - task: ContrastIntegration@2
-    inputs:
-      ContrastService: 'Contrast Connection'
-      Application: '75a71c5b-4381-44fa-abd0-b0e57554560e'
-      CriticalLimit: '0'
-      HighLimit: '0'
-      MediumLimit: '0'
-      LowLimit: '0'
-      NoteLimit: '0'
+    - task: ContrastIntegration@2
+      inputs:
+        ContrastService: 'Contrast Connection'
+        Application: '75a71c5b-4381-44fa-abd0-b0e57554560e'
+        CriticalLimit: '0'
+        HighLimit: '0'
+        MediumLimit: '0'
+        LowLimit: '0'
+        NoteLimit: '0'
