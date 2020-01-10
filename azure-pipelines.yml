@@ -28,7 +28,7 @@ jobs:
       inputs:
         ContrastService: 'Contrast Connection'
         Application: '75a71c5b-4381-44fa-abd0-b0e57554560e'
-        StatusFilter: 'tracked, Confirmed, Fixed, NotAProblem, Remediated, AutoRemediated, Reported, Suspicious, untracked'
+        StatusFilter: 'tracked, Confirmed, Fixed, NotAProblem, Remediated, AutoRemediated, Suspicious, untracked'
         CriticalLimit: '0'
         HighLimit: '0'
         MediumLimit: '0'
